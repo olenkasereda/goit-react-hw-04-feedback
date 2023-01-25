@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad, total, percentPositive }) => {
+const Statistics = ({ state, total, percentPositive }) => {
+  const { good, neutral, bad } = state;
   return (
     <>
       <p>Good: {good} </p>
@@ -18,9 +19,7 @@ const Statistics = ({ good, neutral, bad, total, percentPositive }) => {
 };
 
 Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+  state: PropTypes.object.isRequired,
   total: PropTypes.number.isRequired,
   percentPositive: PropTypes.number.isRequired,
 };
